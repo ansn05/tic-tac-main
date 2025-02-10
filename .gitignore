@@ -1,0 +1,35 @@
+# Node.js
+node_modules/
+
+# TypeScript
+dist/
+build/
+
+# Playwright reports
+playwright-report/
+
+# Coverage
+coverage/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+
+# IDE config
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+
+# Yarn cache
+.yarn/
+
+# npm cache
+.npm/
+
+# Package-lock.json / Yarn.lock
+package-lock.json
+yarn.lock

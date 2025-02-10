@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2016",    // or "ESNext"
+    "lib": ["ES2016", "DOM"],  // or ["ESNext", "DOM"]
+    "module": "CommonJS",
+    "esModuleInterop": true,                             /*This is for "path" module import*/
+    "baseUrl": ".",                                      /* Specify the base directory to resolve non-relative module names. */
+    "paths": {                                           /* Specify a set of entries that re-map imports to additional lookup locations. */
+      // "@pages/*":["pageFactory/pageRepository/*"],
+      // "@objects/*":["pageFactory/objectRepository/*"],
+      "@lib/*":["lib/*"],
+    }                             
+  }
+}
+
