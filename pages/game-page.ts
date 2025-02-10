@@ -32,14 +32,17 @@ export class GamePage {
       .click();
   }
 
-  async getAndCheckSquareState(rowIndex: number, buttonIndex: number, expectedState: string
-  ): Promise<void> {
-    const squareLocator = await this.BOARD_ROW.nth(rowIndex)
+  async getSquareState(rowIndex: number, buttonIndex: number ) {
+    return this.BOARD_ROW.nth(rowIndex)
       .locator("button.square")
       .nth(buttonIndex);
-    expect(squareLocator).toHaveText(expectedState);
+    //return squareLocator;
+    //expect(squareLocator).toHaveText(expectedState);
   }
 
-  async getTurnStatus(): Promise<void> {
+  async checkSquareStatus(rowIndex: number, buttonIndex: number, status: string): Promise<void> {
+    expect(await this.BOARD_ROW.nth(rowIndex)
+      .locator("button.square")
+      .nth(buttonIndex)).toHaveText(status)
   }
 }
