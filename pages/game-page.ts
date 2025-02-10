@@ -9,6 +9,9 @@ export class GamePage {
   readonly TURN_STATUS: Locator;
   readonly TURN_MESSAGE_X = 'Next player: X';
   readonly TURN_MESSAGE_O = 'Next player: O';
+  readonly WIN_MESSAGE_X = 'Winner: X';
+  readonly WIN_MESSAGE_O = 'Winner: O';
+
 
   constructor(page: Page, context: BrowserContext) {
     this.page = page;
