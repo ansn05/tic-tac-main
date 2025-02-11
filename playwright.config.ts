@@ -1,20 +1,20 @@
 import { defineConfig } from "@playwright/test";
 
 export default defineConfig({
-  testDir: "./tests", // Folder, w którym Playwright szuka testów
-  timeout: 30000, // Maksymalny czas trwania testu w milisekundach
-  retries: 1, // Ilość ponownych prób po niepowodzeniu
+  testDir: "./tests", 
+  timeout: 30000, 
+  retries: 0, 
   use: {
-    baseURL: "http://localhost:5173", // Adres aplikacji Tic-Tac-Toe
-    browserName: "chromium", // Możesz dodać 'firefox' i 'webkit'
-    headless: false, // false → widoczna przeglądarka, true → testy w tle
-    viewport: { width: 1280, height: 720 }, // Ustawienie okna przeglądarki
-    screenshot: "only-on-failure", // Screenshoty tylko po błędzie
-    trace: "on-first-retry", // Śledzenie testów przy pierwszej awarii
+    baseURL: "http://localhost:5173", // 
+    browserName: "chromium", 
+    headless: false, 
+    viewport: { width: 1280, height: 720 }, 
+    screenshot: "only-on-failure", 
+    trace: "on-first-retry", 
   },
   projects: [
-    { name: "chromium", use: { browserName: "chromium" } },
-    // { name: 'firefox', use: { browserName: 'firefox' } },
+     { name: "chromium", use: { browserName: "chromium" } },
+     //{ name: 'firefox', use: { browserName: 'firefox' } },
     // { name: 'webkit', use: { browserName: 'webkit' } },
   ],
 });
