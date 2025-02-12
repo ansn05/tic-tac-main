@@ -86,21 +86,10 @@ export class GamePage {
   async navigateToURL(): Promise<void> {
     await this.page.goto("/");
   }
-
+  
+  // Method to verify empty squares based on the list
   async verifyAllSquaresEmpty(moves: [number, number, string][]) {
-    const squaresToCheck: [number, number, string][] = [
-      [0, 0, ""],
-      [0, 1, ""],
-      [0, 2, ""],
-      [1, 0, ""],
-      [1, 1, ""],
-      [1, 2, ""],
-      [2, 0, ""],
-      [2, 1, ""],
-      [2, 2, ""],
-    ];
-
-    for (const [rowIndex, buttonIndex, expectedText] of squaresToCheck) {
+    for (const [rowIndex, buttonIndex, expectedText] of moves) {
       await this.checkSquareStatus(rowIndex, buttonIndex, expectedText);
       await expect(this.TURN_STATUS).toHaveText(this.TURN_MESSAGE_X);
     }

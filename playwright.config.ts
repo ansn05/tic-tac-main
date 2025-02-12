@@ -7,7 +7,7 @@ export default defineConfig({
   use: {
     baseURL: "http://localhost:5173", // 
     browserName: "chromium", 
-    headless: false, 
+    headless: true, 
     viewport: { width: 1280, height: 720 }, 
     screenshot: "only-on-failure", 
     trace: "on-first-retry", 
